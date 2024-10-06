@@ -1,0 +1,25 @@
+[2024-10-06T16:35:37.788+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-06T16:35:37.998+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_pipeline.choose_source scheduled__2024-10-05T00:00:00+00:00 [queued]>
+[2024-10-06T16:35:38.110+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_pipeline.choose_source scheduled__2024-10-05T00:00:00+00:00 [queued]>
+[2024-10-06T16:35:38.152+0000] {taskinstance.py:2865} INFO - Starting attempt 2 of 2
+[2024-10-06T16:35:38.420+0000] {taskinstance.py:2888} INFO - Executing <Task(BranchPythonOperator): choose_source> on 2024-10-05 00:00:00+00:00
+[2024-10-06T16:35:38.519+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=194) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-10-06T16:35:38.534+0000] {standard_task_runner.py:72} INFO - Started process 199 to run task
+[2024-10-06T16:35:38.540+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl_pipeline', 'choose_source', 'scheduled__2024-10-05T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/etl_pipeline.py', '--cfg-path', '/tmp/tmp6m1o7ie8']
+[2024-10-06T16:35:38.572+0000] {standard_task_runner.py:105} INFO - Job 4: Subtask choose_source
+[2024-10-06T16:35:39.434+0000] {task_command.py:467} INFO - Running <TaskInstance: etl_pipeline.choose_source scheduled__2024-10-05T00:00:00+00:00 [running]> on host d0efb872fab5
+[2024-10-06T16:35:44.207+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_pipeline' AIRFLOW_CTX_TASK_ID='choose_source' AIRFLOW_CTX_EXECUTION_DATE='2024-10-05T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-05T00:00:00+00:00'
+[2024-10-06T16:35:44.210+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-06T16:35:44.366+0000] {baseoperator.py:405} WARNING - BranchPythonOperator.execute cannot be called outside TaskInstance!
+[2024-10-06T16:35:44.373+0000] {logging_mixin.py:190} INFO - Selected source type: csv
+[2024-10-06T16:35:44.380+0000] {python.py:240} INFO - Done. Returned value was: extract_csv
+[2024-10-06T16:35:44.381+0000] {branch.py:38} INFO - Branch into extract_csv
+[2024-10-06T16:35:44.383+0000] {skipmixin.py:230} INFO - Following branch ('extract_csv',)
+[2024-10-06T16:35:44.464+0000] {skipmixin.py:278} INFO - Skipping tasks [('extract_json', -1)]
+[2024-10-06T16:35:44.617+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-06T16:35:44.622+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=etl_pipeline, task_id=choose_source, run_id=scheduled__2024-10-05T00:00:00+00:00, execution_date=20241005T000000, start_date=20241006T163537, end_date=20241006T163544
+[2024-10-06T16:35:44.765+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-10-06T16:35:46.208+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-06T16:35:46.220+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
