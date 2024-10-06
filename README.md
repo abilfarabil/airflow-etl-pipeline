@@ -41,31 +41,31 @@ Proyek ini merupakan implementasi ETL (Extract, Transform, Load) menggunakan Apa
 ## Contoh Penggunaan
 Setelah menjalankan DAG untuk kedua file, Anda dapat melihat hasilnya di database SQLite menggunakan DBeaver. Screenshot berikut menunjukkan hasil dari proses ekstraksi:
 
-1. ![Screenshot Pengaturan DAG](1_Screenshot_Pengaturan_DAG.png)
+1. ![Screenshot Pengaturan DAG](images/1_Screenshot_Pengaturan_DAG.png)
    - Menunjukkan semua konfigurasi yang terkait dengan DAG, termasuk nama DAG dan parameter lainnya.
 
-2. ![Screenshot Parameter Konfigurasi untuk CSV](2_Screenshot_Parameter_Konfigurasi_untuk_CSV.png)
+2. ![Screenshot Parameter Konfigurasi untuk CSV](images/2_Screenshot_Parameter_Konfigurasi_untuk_CSV.png)
    - Menampilkan pengaturan parameter untuk ekstraksi file `sales_data.csv`.
 
-3. ![Screenshot DAG Run untuk CSV](3_Screenshot_DAG_Run_untuk_CSV.png)
+3. ![Screenshot DAG Run untuk CSV](images/3_Screenshot_DAG_Run_untuk_CSV.png)
    - Status run DAG saat menjalankan file CSV.
 
-4. ![Screenshot Graf DAG untuk CSV](4_Screenshot_Graf_DAG_untuk_CSV.png)
+4. ![Screenshot Graf DAG untuk CSV](images/4_Screenshot_Graf_DAG_untuk_CSV.png)
    - Visualisasi dari alur kerja DAG untuk file CSV.
 
-5. ![Screenshot Hasil di SQLite Setelah CSV](5_Screenshot_Hasil_di_SQLite_Setelah_CSV.png)
+5. ![Screenshot Hasil di SQLite Setelah CSV](images/5_Screenshot_Hasil_di_SQLite_Setelah_CSV.png)
    - Hasil ekstraksi data dari `sales_data.csv` di database SQLite.
 
-6. ![Screenshot Parameter Konfigurasi untuk JSON](6_Screenshot_Parameter_Konfigurasi_untuk_JSON.png)
+6. ![Screenshot Parameter Konfigurasi untuk JSON](images/6_Screenshot_Parameter_Konfigurasi_untuk_JSON.png)
    - Menampilkan pengaturan parameter untuk ekstraksi file `customers_data.json`.
 
-7. ![Screenshot DAG Run untuk JSON](7_Screenshot_DAG_Run_untuk_JSON.png)
+7. ![Screenshot DAG Run untuk JSON](images/7_Screenshot_DAG_Run_untuk_JSON.png)
    - Status run DAG saat menjalankan file JSON.
 
-8. ![Screenshot Graf DAG untuk JSON](8_Screenshot_Graf_DAG_untuk_JSON.png)
+8. ![Screenshot Graf DAG untuk JSON](images/8_Screenshot_Graf_DAG_untuk_JSON.png)
    - Visualisasi dari alur kerja DAG untuk file JSON.
 
-9. ![Screenshot Hasil di SQLite Setelah JSON](9_Screenshot_Hasil_di_SQLite_Setelah_JSON.png)
+9. ![Screenshot Hasil di SQLite Setelah JSON](images/9_Screenshot_Hasil_di_SQLite_Setelah_JSON.png)
    - Hasil ekstraksi data dari `customers_data.json` di database SQLite.
 
 ## Kesimpulan
