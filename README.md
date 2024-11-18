@@ -1,72 +1,112 @@
 # ETL Pipeline Project
 
-## Deskripsi
-Proyek ini merupakan implementasi ETL (Extract, Transform, Load) menggunakan Apache Airflow untuk mengekstrak data dari dua sumber berbeda: `sales_data.csv` dan `customers_data.json`. Proyek ini bertujuan untuk memberikan pemahaman praktis tentang bagaimana menggunakan Airflow untuk mengelola alur kerja ETL dan menyimpan hasilnya dalam database SQLite.
+## Overview
+This project implements an ETL (Extract, Transform, Load) pipeline using Apache Airflow to extract data from two different sources: `sales_data.csv` and `customers_data.json`. The project demonstrates practical understanding of using Airflow for managing ETL workflows and storing results in a SQLite database.
 
-## Teknologi yang Digunakan
-- Python
-- SQL
-- Apache Airflow
+## Prerequisites
+- Docker and Docker Compose
+- Python 3.8+
 - SQLite
-- DBeaver (untuk mengelola database SQLite)
+- DBeaver (for SQLite database management)
 
-## Cara Menjalankan Proyek
-1. **Persyaratan Sistem:**
-   - Pastikan Anda memiliki Docker dan Docker Compose terinstal.
-   - Kloning repositori ini ke mesin lokal Anda.
+## Installation & Setup
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/abilfarabil/airflow-etl-pipeline.git
+   ```
 
-2. **Instalasi:**
-   - Navigasikan ke direktori proyek Anda.
-   - Jalankan perintah berikut untuk memulai Airflow:
-     ```bash
-     docker-compose up -d
-     ```
-   - Tunggu hingga semua kontainer siap.
+2. Navigate to project directory:
+   ```bash
+   cd [project-directory]
+   ```
 
-3. **Menjalankan DAG:**
-   - Akses antarmuka Airflow melalui browser di `http://localhost:8080`.
-   - Trigger DAG untuk file CSV dengan konfigurasi:
-     ```json
-     {
-         "source_type": "csv"
-     }
-     ```
-   - Trigger DAG untuk file JSON dengan konfigurasi:
-     ```json
-     {
-         "source_type": "json"
-     }
-     ```
+3. Start Airflow using Docker Compose:
+   ```bash
+   docker-compose up -d
+   ```
 
-## Contoh Penggunaan
-Setelah menjalankan DAG untuk kedua file, Anda dapat melihat hasilnya di database SQLite menggunakan DBeaver. Screenshot berikut menunjukkan hasil dari proses ekstraksi:
+## Features
+- ETL pipeline implementation using Apache Airflow
+- Data extraction from CSV and JSON sources
+- Data transformation and cleaning
+- Loading data into SQLite database
+- Parameterized DAG execution
+- Automated workflow management
 
-1. ![Screenshot Pengaturan DAG](images/1_Screenshot_Pengaturan_DAG.png)
-   - Menunjukkan semua konfigurasi yang terkait dengan DAG, termasuk nama DAG dan parameter lainnya.
+## Documentation
 
-2. ![Screenshot Parameter Konfigurasi untuk CSV](images/2_Screenshot_Parameter_Konfigurasi_untuk_CSV.png)
-   - Menampilkan pengaturan parameter untuk ekstraksi file `sales_data.csv`.
+### DAG Configuration
+The DAG can be triggered with different configurations based on the source type:
 
-3. ![Screenshot DAG Run untuk CSV](images/3_Screenshot_DAG_Run_untuk_CSV.png)
-   - Status run DAG saat menjalankan file CSV.
+1. For CSV files:
+```json
+{
+    "source_type": "csv"
+}
+```
 
-4. ![Screenshot Graf DAG untuk CSV](images/4_Screenshot_Graf_DAG_untuk_CSV.png)
-   - Visualisasi dari alur kerja DAG untuk file CSV.
+2. For JSON files:
+```json
+{
+    "source_type": "json"
+}
+```
 
-5. ![Screenshot Hasil di SQLite Setelah CSV](images/5_Screenshot_Hasil_di_SQLite_Setelah_CSV.png)
-   - Hasil ekstraksi data dari `sales_data.csv` di database SQLite.
+### Implementation Steps and Results
 
-6. ![Screenshot Parameter Konfigurasi untuk JSON](images/6_Screenshot_Parameter_Konfigurasi_untuk_JSON.png)
-   - Menampilkan pengaturan parameter untuk ekstraksi file `customers_data.json`.
+1. DAG Configuration
+![DAG Configuration](images/1_Screenshot_Pengaturan_DAG.png)
+- Shows all configurations related to the DAG, including DAG name and other parameters.
 
-7. ![Screenshot DAG Run untuk JSON](images/7_Screenshot_DAG_Run_untuk_JSON.png)
-   - Status run DAG saat menjalankan file JSON.
+2. CSV Configuration Parameters
+![CSV Configuration Parameters](images/2_Screenshot_Parameter_Konfigurasi_untuk_CSV.png)
+- Displays parameter settings for `sales_data.csv` extraction.
 
-8. ![Screenshot Graf DAG untuk JSON](images/8_Screenshot_Graf_DAG_untuk_JSON.png)
-   - Visualisasi dari alur kerja DAG untuk file JSON.
+3. CSV DAG Run Status
+![CSV DAG Run](images/3_Screenshot_DAG_Run_untuk_CSV.png)
+- DAG run status when processing CSV file.
 
-9. ![Screenshot Hasil di SQLite Setelah JSON](images/9_Screenshot_Hasil_di_SQLite_Setelah_JSON.png)
-   - Hasil ekstraksi data dari `customers_data.json` di database SQLite.
+4. CSV DAG Graph
+![CSV DAG Graph](images/4_Screenshot_Graf_DAG_untuk_CSV.png)
+- Workflow visualization for CSV file processing.
 
-## Kesimpulan
-Proyek ini menunjukkan bagaimana Airflow dapat digunakan untuk mengotomatiskan proses ETL dari berbagai sumber data. Dengan mengonfigurasi DAG dan menggunakan parameter, Anda dapat dengan mudah mengekstrak, mentransformasi, dan memuat data ke dalam database, yang merupakan keterampilan penting dalam pengembangan data engineering.
+5. SQLite Results After CSV Processing
+![SQLite Results Post-CSV](images/5_Screenshot_Hasil_di_SQLite_Setelah_CSV.png)
+- Extracted data from `sales_data.csv` in SQLite database.
+
+6. JSON Configuration Parameters
+![JSON Configuration Parameters](images/6_Screenshot_Parameter_Konfigurasi_untuk_JSON.png)
+- Displays parameter settings for `customers_data.json` extraction.
+
+7. JSON DAG Run Status
+![JSON DAG Run](images/7_Screenshot_DAG_Run_untuk_JSON.png)
+- DAG run status when processing JSON file.
+
+8. JSON DAG Graph
+![JSON DAG Graph](images/8_Screenshot_Graf_DAG_untuk_JSON.png)
+- Workflow visualization for JSON file processing.
+
+9. SQLite Results After JSON Processing
+![SQLite Results Post-JSON](images/9_Screenshot_Hasil_di_SQLite_Setelah_JSON.png)
+- Extracted data from `customers_data.json` in SQLite database.
+
+## Technologies Used
+- Python 3.8+
+- Apache Airflow 2.x
+- SQLite 3
+- Docker & Docker Compose
+- DBeaver (latest version)
+
+## References
+- [Apache Airflow Documentation](https://airflow.apache.org/docs/)
+- [SQLite Documentation](https://www.sqlite.org/docs.html)
+- [Docker Documentation](https://docs.docker.com/)
+
+## Conclusion
+This project demonstrates how Airflow can be utilized to automate ETL processes from various data sources. Through DAG configuration and parameterization, you can easily extract, transform, and load data into databases, which is an essential skill in data engineering development.
+
+## Contributing
+Feel free to fork this repository and submit pull requests for any improvements.
+8. Mempertahankan semua screenshot dengan deskripsi yang lebih terstruktur
+
+Semua gambar tetap dipertahankan dengan nama file yang sama, hanya deskripsinya yang diubah ke dalam Bahasa Inggris untuk konsistensi.
